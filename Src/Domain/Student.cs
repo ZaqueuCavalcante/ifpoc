@@ -11,4 +11,6 @@ public class Student
     public string? Email { get; set; }
 
     public DateTime? BirthDate { get; set; }
+
+    public List<Course> Courses { get; set; }
 }

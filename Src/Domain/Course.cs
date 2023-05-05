@@ -10,6 +10,8 @@ public class Course
 
     public CourseLevel Level { get; set; }
 
+    public List<Student> Students { get; set; }
+
     public void ChangeLevel(CourseLevel newLevel)
     {
         Level = newLevel;

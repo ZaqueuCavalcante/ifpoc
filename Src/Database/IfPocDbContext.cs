@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using IfPoc.Domain;
 
 namespace IfPoc.Database;
 
 public class IfPocDbContext : DbContext
 {
-    // public DbSet<Label> Labels { get; set; }
+    public DbSet<Course> Courses { get; set; }
+    public DbSet<Student> Students { get; set; }
 
     public IfPocDbContext(DbContextOptions<IfPocDbContext> options) : base(options) { }
 

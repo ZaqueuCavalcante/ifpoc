@@ -10,7 +10,7 @@ public class Startup
         services.AddServicesConfigs();
 
         services.AddRoutingConfigs();
-        services.AddControllers();
+        services.AddControllersConfigs();
 
         services.AddEfCoreConfigs();
 

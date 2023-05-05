@@ -30,5 +30,18 @@ public class StudentConfig : IEntityTypeConfiguration<Student>
         student.Property(s => s.BirthDate)
             .HasColumnName("datanascimento")
             .HasColumnType("timestamp");
+
+        student.HasMany(s => s.Courses)
+            .WithMany(c => c.Students)
+            .UsingEntity<StudentCourse>(
+                l => l.HasOne<Course>()
+                    .WithMany()
+                    .HasForeignKey(sc => sc.CourseId)
+                    .OnDelete(DeleteBehavior.NoAction),
+                r => r.HasOne<Student>()
+                    .WithMany()
+                    .HasForeignKey(sc => sc.StudentId)
+                    .OnDelete(DeleteBehavior.NoAction)
+            );
     }
 }
